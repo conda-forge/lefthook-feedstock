@@ -1,5 +1,5 @@
 {% set name = "lefthook" %}
-{% set version = "1.11.7" %}
+{% set version = "1.11.8" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/evilmartians/lefthook/archive/v{{ version }}.tar.gz
-  sha256: 2cca5df538ec285954cbbc518108eec4c13eae10b56540c5ab4d5c469459a0a0
+  sha256: 811b658fd8335a57296d9892f334a76b286b2c8b39cead33e9c0942440f8177b
 
 build:
   number: 0
