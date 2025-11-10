@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: lefthook
-  version: "2.0.2"
+  version: "2.0.3"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://github.com/evilmartians/lefthook/archive/v${{ version }}.tar.gz
-  sha256: 87c8658ddfdb125d88d123f2c2919e83a8143865dcb2f41b99a37011d444dd9f
+  sha256: 818555b6f51338391f85fed332ae0ad4e457a4b43e2de68105ccf5c36105c665
 
 build:
   number: 0
