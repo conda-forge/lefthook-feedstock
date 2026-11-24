@@ -2,7 +2,14 @@
 
 set -o xtrace -o nounset -o pipefail -o errexit
 
-go build -trimpath -buildmode=pie -o=${PREFIX}/bin/${PKG_NAME} -ldflags="-s -w"
+# lefthook >=2.2.3 built with -buildmode=pie segfaults at startup on linux-ppc64le
+if [[ ${target_platform} == linux-ppc64le ]]; then
+    BUILDMODE=exe
+else
+    BUILDMODE=pie
+fi
+
+go build -trimpath -buildmode=${BUILDMODE} -o=${PREFIX}/bin/${PKG_NAME} -ldflags="-s -w"
 go-licenses save . --save_path=license-files
 
 if [[ ${build_platform} == ${target_platform} ]]; then
